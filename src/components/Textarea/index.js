@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { HeadIcon } from '@flatchr/icons';
+// import { HeadIcon } from '@flatchr/icons';
 // import FormLabel from '../formLabel';
 import {
   Count, Wrapper
@@ -57,9 +57,9 @@ const Textarea = props => {
       )}
       {error &&
         <p className="input-message">
-          <HeadIcon
+          {/* <HeadIcon
             width={18}
-          /> {error}
+          /> {error} */}
         </p>
       }
     </Wrapper>

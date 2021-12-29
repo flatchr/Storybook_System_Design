@@ -63,7 +63,7 @@
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "@ctrl/tinycolor": "^3.4.0",
-    "@flatchr/icons": "^1.0.3",
+    "@flatchr/icons": "^1.0.5",
     "@rollup/plugin-babel": "^5.3.0",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
@@ -89,6 +89,7 @@
   },
   "peerDependencies": {
     "@ctrl/tinycolor": "^3.4.0",
+    "@flatchr/icons": "^1.0.5",
     "classnames": "^2.3.1",
     "prop-types": "^15.8.0",
     "react": "^17.0.2",

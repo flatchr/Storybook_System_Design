@@ -1356,11 +1356,12 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@flatchr/icons@^1.0.3":
-  version "1.0.3"
-  resolved "https://gitlab.com/api/v4/projects/30455429/packages/npm/@flatchr/icons/-/@flatchr/icons-1.0.3.tgz#b73e83412ce16d321f1fa1d8ea71fd99ef0a532b"
-  integrity sha1-tz6DQSzhbTIfH6HY6nH9me8KUys=
+"@flatchr/icons@^1.0.5":
+  version "1.0.5"
+  resolved "https://gitlab.com/api/v4/projects/30455429/packages/npm/@flatchr/icons/-/@flatchr/icons-1.0.5.tgz#5353d7612df9270c921d430daa76edca3ec17c32"
+  integrity sha1-U1PXYS35JwySHUMNqnbtyj7BfDI=
   dependencies:
+    prop-types "^15.8.0"
     react "^17.0.2"
     react-dom "^17.0.2"
     react-native "^0.66.0"

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HeadIcon } from '@flatchr/icons';
+import { PeopleIcon } from '@flatchr/icons';
 
 import { Wrapper } from './style';
 
@@ -18,7 +18,7 @@ const UserAvatar = props => {
       width={size}
     >
       {!picture && (
-        <HeadIcon
+        <PeopleIcon
           height={Math.floor(size * .45)}
           width={Math.floor(size * .45)}
         />
