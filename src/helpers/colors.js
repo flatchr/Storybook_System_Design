@@ -1,0 +1,40 @@
+import { TinyColor } from '@ctrl/tinycolor';
+
+export const getHexaColor = (hexCode) => {
+  let hex = hexCode.replace('#', '');
+
+  if (hex.length === 3) {
+    hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+  }
+  return hex;
+};
+
+export const convertHexToRGBA = (hexCode, opacity) => {
+  const hex = getHexaColor(hexCode);
+
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+
+  const newOpacity = (Number(opacity) === opacity && opacity % 1 !== 0) // test if float
+    ? opacity
+    : opacity / 100;
+
+  return `rgba(${r},${g},${b},${newOpacity})`;
+};
+
+export const getTextColorInBackground = (hexCode, theme) => {
+  const color = new TinyColor(hexCode);
+  if (color.getLuminance() < 0.6) {
+    return theme.colors.white;
+  }
+  return theme.colors.black;
+};
+
+export const getHoverBackgroundColor = (hexCode) => {
+  const color = new TinyColor(hexCode);
+  if (color.getLuminance() >= 0.6) {
+    return color.lighten(10);
+  }
+  return color.darken(10);
+};
