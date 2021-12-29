@@ -11,10 +11,11 @@ const PreviewColors = () => {
     all.push(...group.colors);
     return all;
   }, []);
-  const notGroupedColors = {
+  const missingColors = Object.keys(restColors).filter(x => !allGroupedColors.includes(x));
+  const notGroupedColors = !!missingColors?.length ? {
     name: 'A trier',
     colors: Object.keys(restColors).filter(x => !allGroupedColors.includes(x)),
-  };
+  } : {};
 
   return (
     <Wrapper>
@@ -39,7 +40,8 @@ const PreviewColors = () => {
                   </div>
                 </Item>
               )) : (
-                <p>Merci d'ajouter des couleurs dans la section !</p>
+                (colorGroup.name?.length && colorGroup.name !== 'A trier') &&
+                <p>{colorGroup.name} Merci d'ajouter des couleurs dans la section !</p>
               )}
           </GroupWrapper>
         </div>
