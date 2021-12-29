@@ -21,8 +21,11 @@ export const Wrapper = styled.div`
   justify-content: center;
   margin: 0 auto;
   width: ${p => p.width}px;
-  svg path {
-    fill: ${p => p.theme.colors.colorsGrey} !important;
+  svg {
+    transform: translateY(-1px);
+    path {
+      fill: ${p => p.theme.colors.colorsGrey} !important;
+    }
   }
 `;
 

@@ -19,8 +19,8 @@ const UserAvatar = props => {
     >
       {!picture && (
         <PeopleIcon
-          height={Math.floor(size * .45)}
-          width={Math.floor(size * .45)}
+          height={Math.floor(size * .35)}
+          width={Math.floor(size * .35)}
         />
       )}
     </Wrapper>
