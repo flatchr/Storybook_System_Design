@@ -46,7 +46,6 @@ const FormLabel = props => {
       noMargin={noMargin}
       required={required}
       className={classNames('formLabel', {
-        'newFormLabel-noMargin': noMargin,
         [additionalClassNames]: additionalClassNames !== null,
       })}
       {...addProps}
