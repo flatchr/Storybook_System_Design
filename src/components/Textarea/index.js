@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-// import { HeadIcon } from '@flatchr/icons';
-// import FormLabel from '../formLabel';
+import { ErrorIcon } from '@flatchr/icons';
+
 import {
-  Count, Wrapper
+  Count, Wrapper, ErrorMessage, CountWrapper
 } from './style';
 
 const Textarea = props => {
@@ -51,16 +51,25 @@ const Textarea = props => {
         {...commonProps}
       />
       {!noCount && (
-        <Count>
-          {value.length || 0}/{maxLength}
-        </Count>
+        <CountWrapper>
+          {error &&
+        <ErrorMessage>
+          <ErrorIcon
+            height={16}
+          /> {error}
+        </ErrorMessage>
+          }
+          <Count>
+            {value.length || 0}/{maxLength}
+          </Count>
+        </CountWrapper>
       )}
-      {error &&
-        <p className="input-message">
-          {/* <HeadIcon
-            width={18}
-          /> {error} */}
-        </p>
+      {(error && noCount) &&
+        <ErrorMessage>
+          <ErrorIcon
+            height={16}
+          /> {error}
+        </ErrorMessage>
       }
     </Wrapper>
   );
@@ -78,7 +87,6 @@ Textarea.propTypes = {
   placeholder: PropTypes.string,
   noCount: PropTypes.bool,
   minHeight: PropTypes.bool,
-  className: PropTypes.string,
 };
 
 export default Textarea;

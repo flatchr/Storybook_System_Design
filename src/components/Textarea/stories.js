@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Textarea from './index';
 
@@ -139,7 +139,16 @@ const TextareaStories = {
   },
 };
 
-const Template = (args) => <TextareaStories {...args} />;
+const Template = (args) => {
+  const [localValue, setValue] = useState('');
+  return (
+    <Textarea
+      {...args}
+      onChange={e => setValue(e.target.value)}
+      value={localValue}
+    />
+  );
+};
 
 export default TextareaStories;
 
@@ -147,35 +156,34 @@ export default TextareaStories;
 export const Default = Template.bind({});
 Default.args = {};
 
-// Default disabled
+// Default Placeholder
+export const DefaultPlaceholder = Template.bind({});
+DefaultPlaceholder.args = {
+  placeholder: 'Ceci est une valeur placeholder'
+};
+
 export const DefaultDisabled = Template.bind({});
 DefaultDisabled.args = {
   disabled: true,
 };
 
-// Default with label
-export const DefaultWithLabel = Template.bind({});
-DefaultWithLabel.args = {
-  label: 'Label du textarea'
+export const DefaultError = Template.bind({});
+DefaultError.args = {
+  error: 'Ce champ est en erreur !',
 };
 
-// Default required with label
-export const DefaultRequiredWithLabel = Template.bind({});
-DefaultRequiredWithLabel.args = {
-  label: 'Label du textarea',
-  required: true,
-};
-
-// Default with label and no length counter
-export const DefaultWithLabelWithoutCount = Template.bind({});
-DefaultWithLabel.args = {
-  label: 'Label du textarea',
+export const DefaultWithoutCount = Template.bind({});
+DefaultWithoutCount.args = {
   noCount: true,
 };
 
-// Min Height with label
-export const MinHeightWithLabel = Template.bind({});
-MinHeightWithLabel.args = {
-  label: 'Label du textarea',
-  minHeight: true,
+export const DefaultWithoutCountError = Template.bind({});
+DefaultWithoutCountError.args = {
+  noCount: true,
+  error: 'Ce champ est en erreur !',
 };
+
+// export const MinHeight = Template.bind({});
+// MinHeight.args = {
+//   minHeight: true,
+// };
