@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const LabelWrapper = styled.label`
   align-items: center;
-  color: ${p => p.theme.colors.colorsGrey};
+  color: ${p => p.theme.colors.textPrimary};
   display: flex;
   font-family: ${p => p.theme.fonts.lato.name};
   font-size: ${p => p.theme.typography.sizes.small};
@@ -12,7 +12,7 @@ export const LabelWrapper = styled.label`
     if (p.required) {
       return css`
         &:after {
-          color: ${p.theme.colors.colorsError};
+          color: ${p.theme.colors.error400};
           display: flex;
           content: '*';
           margin-left: 3px;

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   align-items: center;
-  background-color: ${p => p.theme.colors.colorsGreyLighter};
+  background-color: ${p => p.theme.colors.background200};
   ${p => {
     if (p.picture) {
       return css`
@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
   svg {
     transform: translateY(-1px);
     path {
-      fill: ${p => p.theme.colors.colorsGrey} !important;
+      fill: ${p => p.theme.colors.textPrimary} !important;
     }
   }
 `;

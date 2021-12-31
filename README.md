@@ -29,6 +29,8 @@ This project has a storybook to see and test your icons.
 
 #### `yarn storybook`
 
+It will be accessible at [http://localhost:6076/](http://localhost:6076/)
+
 ## Build the package
 
 #### `yarn build`
@@ -41,23 +43,30 @@ __⚠️ Don't forget to update `package.json` with the new version of the packa
 
 Commit and push your work, and when your code is on `main` branch, you can launch:
 
-#### `yarn publish`
+## Publish the package
 
-All the published versions are here : https://gitlab.com/flatchr/shared/icons/-/packages
+It's __required__ to commit the `/dist` directory.
 
+__⚠️ Don't forget to update `package.json` with the new version of the package!__
+
+Commit and push your work, and when your code is on `main` branch, you can launch:
+
+#### `git pull origin main && yarn && cd ./dist && yarn publish`
+
+When your new icons has been published, you will need to create a new branch `update-version-X.X.X`, update the version for the correct version in the package.json at the root directory.
+
+All the published versions are here : https://gitlab.com/flatchr/shared/system-design/-/packages
 ## How add a new component?
 
-
-
+TO FILL
 ## How to use the published package?
 
-### ⚠️ DON'T USE!! 
 Before install, you will need to register gitlab repository as available for your device:
 ```cmd
-npm config set @flatchr:registry https://gitlab.com/api/v4/projects/30455429/packages/npm/
+npm config set @flatchr:registry https://gitlab.com/api/v4/projects/32444154/packages/npm/
 ```
 ```cmd
-npm config set -- "//gitlab.com/api/v4/projects/30455429/packages/npm/:_authToken=utMhyAKFkJdBKxXGonJe"
+npm config set -- "//gitlab.com/api/v4/projects/32444154/packages/npm/:_authToken=glpat-GzA7zW-iwKH5wLHHhsir"
 ```
 
 In the repository you want to use Flatchr system-design: 

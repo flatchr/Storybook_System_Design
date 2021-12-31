@@ -113,13 +113,11 @@ export const Label = Template.bind({});
 Label.args = {
   label: 'Label du form',
   required: false,
-  noMargin: true
 };
 
 // Label required
 export const LabelRequired = Template.bind({});
 LabelRequired.args = {
   label: 'Label du form',
-  noMargin: true,
   required: true,
 };
