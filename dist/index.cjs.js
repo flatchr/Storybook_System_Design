@@ -2,16 +2,16 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var styled = require('styled-components');
 var React = require('react');
 var PropTypes = require('prop-types');
 var icons = require('@flatchr/icons');
+var styled = require('styled-components');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
+var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
@@ -197,9 +197,5 @@ UserAvatar.propTypes = {
   picture: PropTypes__default["default"].string
 };
 
-Object.defineProperty(exports, 'ThemeProvider', {
-  enumerable: true,
-  get: function () { return styled__default["default"]; }
-});
 exports.UserAvatar = UserAvatar;
 exports.theme = theme;

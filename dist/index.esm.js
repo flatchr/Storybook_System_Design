@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components';
-export { default as ThemeProvider } from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { UserIcon } from '@flatchr/icons';
+import styled, { css } from 'styled-components';
 
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
