@@ -55,7 +55,7 @@ TO FILL
 
 Before install, you will need to register gitlab repository as available for your device:
 ```cmd
-npm config set @flatchr:registry https://gitlab.com/api/v4/projects/32444154/packages/npm/
+npm config set @flatchr/system-design:registry https://gitlab.com/api/v4/projects/32444154/packages/npm/
 ```
 ```cmd
 npm config set -- "//gitlab.com/api/v4/projects/32444154/packages/npm/:_authToken=glpat-GzA7zW-iwKH5wLHHhsir"
