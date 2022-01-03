@@ -1,5 +1,4 @@
 // Theme
-export { default as ThemeProvider } from 'styled-components';
 export { default as theme } from './theme/index';
 // Components
 export { default as UserAvatar } from './components/UserAvatar/index';
