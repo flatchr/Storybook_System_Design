@@ -39,19 +39,11 @@ It will be accessible at [http://localhost:6076/](http://localhost:6076/)
 
 It's __required__ to commit the `/dist` directory.
 
-__⚠️ Don't forget to update `package.json` with the new version of the package!__
-
 Commit and push your work, and when your code is on `main` branch, you can launch:
 
-## Publish the package
+#### `yarn publish`
 
-It's __required__ to commit the `/dist` directory.
-
-__⚠️ Don't forget to update `package.json` with the new version of the package!__
-
-Commit and push your work, and when your code is on `main` branch, you can launch:
-
-#### `git pull origin main && yarn && cd ./dist && yarn publish`
+And fill the correct new version of the package.
 
 When your new icons has been published, you will need to create a new branch `update-version-X.X.X`, update the version for the correct version in the package.json at the root directory.
 

@@ -186,7 +186,7 @@ var UserAvatar = function UserAvatar(props) {
     picture: picture,
     height: size,
     width: size
-  }, !picture && /*#__PURE__*/React__default["default"].createElement(icons.PeopleIcon, {
+  }, !picture && /*#__PURE__*/React__default["default"].createElement(icons.UserIcon, {
     height: Math.floor(size * .35),
     width: Math.floor(size * .35)
   }));

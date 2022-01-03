@@ -1,7 +1,6 @@
 import babel from '@rollup/plugin-babel';
 import external from 'rollup-plugin-peer-deps-external';
 import del from 'rollup-plugin-delete';
-import generatePackageJson from 'rollup-plugin-generate-package-json';
 import pkg from './package.json';
 
 const config = {
@@ -17,16 +16,6 @@ const config = {
       babelHelpers: 'bundled'
     }),
     del({ targets: ['dist/*'] }),
-    generatePackageJson({
-      baseContents: (pkg) => ({
-        name: pkg.name,
-        main: pkg.main.replace('dist', '.'),
-        module: pkg.module.replace('dist', '.'),
-        version: pkg.version,
-        description: pkg.description,
-        dependencies: pkg.peerDependencies,
-      })
-    }),
   ],
   external: Object.keys(pkg.peerDependencies || {}),
 };
