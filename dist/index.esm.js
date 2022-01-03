@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 export { default as ThemeProvider } from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PeopleIcon } from '@flatchr/icons';
+import { UserIcon } from '@flatchr/icons';
 
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
@@ -177,7 +177,7 @@ var UserAvatar = function UserAvatar(props) {
     picture: picture,
     height: size,
     width: size
-  }, !picture && /*#__PURE__*/React.createElement(PeopleIcon, {
+  }, !picture && /*#__PURE__*/React.createElement(UserIcon, {
     height: Math.floor(size * .35),
     width: Math.floor(size * .35)
   }));

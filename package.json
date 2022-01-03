@@ -1,13 +1,13 @@
 {
-  "name": "@flatchr/designsystem",
+  "name": "@flatch/system-design",
   "files": [
     "./dist"
   ],
   "publishConfig": {
-    "registry": "https://gitlab.com/api/v4/projects/32444154/packages/npm/"
+    "registry": "https://gitlab.com/api/v4/projects/32483573/packages/npm/"
   },
-  "repository": "git://gitlab.com/flatchr/shared/designsystem",
-  "version": "0.1.0",
+  "repository": "https://gitlab.com/flatchr/shared/system-design",
+  "version": "0.0.1",
   "description": "Flatchr™'s design system 🐙",
   "author": "Benjamin Relat <benjamin@flatchr.io>",
   "license": "MIT",
@@ -52,18 +52,19 @@
     ]
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react-scripts": "4.0.3"
+    "@ctrl/tinycolor": "^3.4.0",
+    "@flatchr/icons": "^1.0.9",
+    "classnames": "^2.3.1",
+    "prop-types": "^15.8.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
-    "@ctrl/tinycolor": "^3.4.0",
-    "@flatchr/icons": "^1.0.7",
     "@rollup/plugin-babel": "^5.3.0",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
@@ -72,24 +73,23 @@
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/react": "^6.4.9",
     "@storybook/theming": "^6.4.9",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "bootstrap": "5.1.3",
-    "classnames": "^2.3.1",
     "npm-run-all": "^4.1.5",
-    "prop-types": "^15.8.0",
-    "react": "^17.0.2",
     "react-bootstrap": "^2.0.4",
-    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "react-scripts": "4.0.3",
     "react-syntax-highlighter": "^15.4.5",
     "rollup": "^2.58.0",
     "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-generate-package-json": "^3.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "styled-components": "^5.3.3"
   },
   "peerDependencies": {
     "@ctrl/tinycolor": "^3.4.0",
-    "@flatchr/icons": "^1.0.7",
+    "@flatchr/icons": "^1.0.9",
     "classnames": "^2.3.1",
     "prop-types": "^15.8.0",
     "react": "^17.0.2",
