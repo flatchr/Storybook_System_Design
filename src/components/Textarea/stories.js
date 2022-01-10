@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 
 import Textarea from './index';
+import FormLabel from '../FormLabel/index';
 
 const TextareaStories = {
   title: 'Forms/Textarea',
   component: Textarea,
+  parameters: {
+    options: { showPanel: true },
+  },
   argTypes: {
     name: {
       defaultValue: 'custom-textarea-name',
@@ -123,17 +127,18 @@ const TextareaStories = {
         type: { summary: "boolean" },
       },
     },
-    minHeight: {
-      defaultValue: false,
-      description: "Reduce textarea's height",
+    additionalClassNames: {
+      defaultValue: null,
+      description: "Additional classNames for style accessibility",
       control: {
-        type: "boolean",
+        disable: true,
+        type: "text",
       },
       table: {
         defaultValue: {
-          summary: false,
+          summary: 'null',
         },
-        type: { summary: "boolean" },
+        type: { summary: "string" },
       },
     },
   },
@@ -142,11 +147,20 @@ const TextareaStories = {
 const Template = (args) => {
   const [localValue, setValue] = useState('');
   return (
-    <Textarea
-      {...args}
-      onChange={e => setValue(e.target.value)}
-      value={localValue}
-    />
+    <>
+      {!!args.label?.length && (
+        <FormLabel
+          required={args.required}
+          labelFor={args.name}
+          label={args.label}
+        />
+      )}
+      <Textarea
+        {...args}
+        onChange={e => setValue(e.target.value)}
+        value={localValue}
+      />
+    </>
   );
 };
 
@@ -157,33 +171,55 @@ export const Default = Template.bind({});
 Default.args = {};
 
 // Default Placeholder
-export const DefaultPlaceholder = Template.bind({});
-DefaultPlaceholder.args = {
+export const WithPlaceholder = Template.bind({});
+WithPlaceholder.args = {
   placeholder: 'Ceci est une valeur placeholder'
 };
 
-export const DefaultDisabled = Template.bind({});
-DefaultDisabled.args = {
+export const Disabled = Template.bind({});
+Disabled.args = {
   disabled: true,
 };
 
-export const DefaultError = Template.bind({});
-DefaultError.args = {
+export const OnError = Template.bind({});
+OnError.args = {
   error: 'Ce champ est en erreur !',
 };
 
-export const DefaultWithoutCount = Template.bind({});
-DefaultWithoutCount.args = {
+export const WithoutCount = Template.bind({});
+WithoutCount.args = {
   noCount: true,
 };
 
-export const DefaultWithoutCountError = Template.bind({});
-DefaultWithoutCountError.args = {
+export const WithoutCountOnError = Template.bind({});
+WithoutCountOnError.args = {
   noCount: true,
   error: 'Ce champ est en erreur !',
 };
 
-// export const MinHeight = Template.bind({});
-// MinHeight.args = {
-//   minHeight: true,
-// };
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  name: 'textarea-with-label',
+  label: 'Label du textarea',
+};
+WithLabel.argTypes = {
+  label: {
+    control: {
+      type: "text",
+    },
+  }
+};
+
+export const WithLabelRequired = Template.bind({});
+WithLabelRequired.args = {
+  name: 'textarea-with-label-required',
+  label: 'Label du textarea',
+  required: true,
+};
+WithLabelRequired.argTypes = {
+  label: {
+    control: {
+      type: "text",
+    },
+  }
+};

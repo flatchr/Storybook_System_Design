@@ -109,15 +109,15 @@ export default FormLabelStories;
 const Template = (args) => <FormLabel {...args} />;
 
 // Label
-export const Label = Template.bind({});
-Label.args = {
+export const Default = Template.bind({});
+Default.args = {
   label: 'Label du form',
   required: false,
 };
 
 // Label required
-export const LabelRequired = Template.bind({});
-LabelRequired.args = {
+export const Required = Template.bind({});
+Required.args = {
   label: 'Label du form',
   required: true,
 };

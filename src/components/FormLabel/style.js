@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 
-export const LabelWrapper = styled.label`
+export const LabelWrapper = styled(({
+  noMargin, required, ...rest
+}) => <label {...rest} />)`
   align-items: center;
   color: ${p => p.theme.colors.textPrimary};
   display: flex;

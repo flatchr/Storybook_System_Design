@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { ErrorIcon } from '@flatchr/icons';
 
 import {
@@ -9,6 +10,7 @@ import {
 const Textarea = props => {
   const {
     name = 'custom-textarea-name',
+    additionalClassNames = null,
     onChange,
     placeholder = null,
     value = '',
@@ -18,7 +20,6 @@ const Textarea = props => {
     fullWidth = false,
     noCount = false,
     error = null,
-    outsideBgColor = null,
   } = props;
 
   const onChangeTextarea = e => {
@@ -37,7 +38,9 @@ const Textarea = props => {
     <Wrapper
       isOnError={error || false}
       isFullWidth={fullWidth}
-      outsideBgColor={outsideBgColor}
+      className={classNames('sd-textarea', {
+        [additionalClassNames]: additionalClassNames !== null,
+      })}
     >
       <textarea
         aria-labelledby={`${name}-label`}
@@ -77,16 +80,28 @@ const Textarea = props => {
 
 Textarea.propTypes = {
   name: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
+  onChange: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.number, // used for null
+  ]),
   value: PropTypes.string.isRequired,
-  error: PropTypes.string,
+  error: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number, // used for null
+  ]),
   maxLength: PropTypes.number,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  placeholder: PropTypes.string,
+  placeholder: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number, // used for null
+  ]),
   noCount: PropTypes.bool,
-  minHeight: PropTypes.bool,
+  additionalClassNames: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number, // used for null
+  ]),
 };
 
 export default Textarea;
