@@ -1362,7 +1362,7 @@
   resolved "https://gitlab.com/api/v4/projects/27159206/packages/npm/@flatchr/helper/-/@flatchr/helper-1.0.0.tgz#dd263e6e8a7697a91a593657a6c78363d4a081fa"
   integrity sha1-3SY+bop2l6kaWTZXpseDY9Sggfo=
 
-"@flatchr/icons@^1.0.9", "@flatchr/icons@^1.1.3":
+"@flatchr/icons@^1.1.3":
   version "1.1.3"
   resolved "https://gitlab.com/api/v4/projects/30455429/packages/npm/@flatchr/icons/-/@flatchr/icons-1.1.3.tgz#2a92f206b06f2ae7e78bff952f22333e35964155"
   integrity sha1-KpLyBrBvKufni/+VLyIzPjWWQVU=
@@ -1376,16 +1376,18 @@
     react-native-web "^0.17.5"
 
 "@flatchr/system-design@^1.0.3":
-  version "1.0.3"
-  resolved "https://gitlab.com/api/v4/projects/32444154/packages/npm/@flatchr/system-design/-/@flatchr/system-design-1.0.3.tgz#fe711dbf5b9b32fac14d6f9316436cf67f4da550"
-  integrity sha1-/nEdv1ubMvrBTW+TFkNs9n9NpVA=
+  version "1.1.0"
+  resolved "https://gitlab.com/api/v4/projects/32444154/packages/npm/@flatchr/system-design/-/@flatchr/system-design-1.1.0.tgz#87a1bf74d8279478b386c5ab4f5d30d098edadc1"
+  integrity sha1-h6G/dNgnlHizhsWrT10w0JjtrcE=
   dependencies:
     "@ctrl/tinycolor" "^3.4.0"
-    "@flatchr/icons" "^1.0.9"
+    "@flatchr/helper" "^1.0.0"
+    "@flatchr/icons" "^1.1.3"
     classnames "^2.3.1"
     prop-types "^15.8.0"
     react "^17.0.2"
     react-dom "^17.0.2"
+    react-router-dom "^6.2.1"
     styled-components "^5.3.3"
 
 "@gar/promisify@^1.0.1":
