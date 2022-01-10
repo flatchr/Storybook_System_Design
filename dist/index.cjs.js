@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var React$1 = require('react');
+var React = require('react');
 var PropTypes = require('prop-types');
 var icons = require('@flatchr/icons');
 var helper = require('@flatchr/helper');
@@ -13,7 +13,7 @@ var tinycolor = require('@ctrl/tinycolor');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React$1);
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
 var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var classNames__default = /*#__PURE__*/_interopDefaultLegacy(classNames);
@@ -270,7 +270,7 @@ var Wrapper$1 = styled__default["default"](function (_ref) {
       _ref.withInitials;
       var rest = _objectWithoutProperties(_ref, _excluded$3);
 
-  return /*#__PURE__*/React.createElement("div", rest);
+  return /*#__PURE__*/React__default["default"].createElement("div", rest);
 })(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  align-items: center;\n  background-color: ", ";\n  ", ";\n  border-radius: 50%;\n  color: $color-grey-light;\n  display: flex;\n  flex: 0 0 auto;\n  height: ", "px;\n  justify-content: center;\n  margin: 0 auto;\n  width: ", "px;\n  svg {\n    transform: translateY(-1px);\n    path {\n      fill: ", " !important;\n    }\n  }\n  ", " {\n    font-size: ", "px;\n  }\n"])), function (p) {
   return p.withInitials ? p.theme.colors.primary400 : p.theme.colors.background200;
 }, function (p) {
@@ -294,7 +294,7 @@ var UserAvatar = function UserAvatar(props) {
       size = _props$size === void 0 ? 35 : _props$size,
       _props$withInitials = props.withInitials,
       withInitials = _props$withInitials === void 0 ? null : _props$withInitials;
-  var initials = React$1.useMemo(function () {
+  var initials = React.useMemo(function () {
     var _withInitials$firstna;
 
     if (!!(withInitials !== null && withInitials !== void 0 && (_withInitials$firstna = withInitials.firstname) !== null && _withInitials$firstna !== void 0 && _withInitials$firstna.length)) {
@@ -333,7 +333,7 @@ var LabelWrapper = styled__default["default"](function (_ref) {
       _ref.required;
       var rest = _objectWithoutProperties(_ref, _excluded$2);
 
-  return /*#__PURE__*/React.createElement("label", rest);
+  return /*#__PURE__*/React__default["default"].createElement("label", rest);
 })(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  font-family: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  margin-bottom: ", "px;\n  ", ";\n"])), function (p) {
   return p.theme.colors.textPrimary;
 }, function (p) {
@@ -367,7 +367,7 @@ var FormLabel = function FormLabel(props) {
       onClick = _props$onClick === void 0 ? null : _props$onClick,
       _props$required = props.required,
       required = _props$required === void 0 ? false : _props$required;
-  var addProps = React$1.useMemo(function () {
+  var addProps = React.useMemo(function () {
     var newProps = {};
 
     if (labelFor) {
@@ -420,7 +420,7 @@ var Wrapper = styled__default["default"](function (_ref) {
       _ref.isFullWidth;
       var rest = _objectWithoutProperties(_ref, _excluded$1);
 
-  return /*#__PURE__*/React.createElement("div", rest);
+  return /*#__PURE__*/React__default["default"].createElement("div", rest);
 })(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  display: flex;\n  font-family: ", ";\n  flex-direction: column;\n  max-width: 275px;\n  width: 100%;\n  textarea {\n    border-style: solid;\n    border-width: 1px;\n    border-color: ", ";\n    border-radius: 5px;\n    box-sizing: border-box;\n    color: ", ";\n    font-family: inherit;\n    font-size: ", ";\n    height: 100%;\n    max-height: 200px;\n    min-height: 150px;\n    padding: 10px;\n    &:hover {\n      border-color: ", ";\n    }\n    &:focus {\n      outline: none;\n    }\n    &:focus,\n    &:active {\n      border-color: ", " !important;\n      box-shadow: 1px 0px 15px ", " !important;\n    }\n  }\n  ", ";\n"])), function (p) {
   return p.theme.fonts.lato.name;
 }, function (p) {
@@ -481,7 +481,7 @@ var Textarea = function Textarea(props) {
     onChange(e);
   };
 
-  var commonProps = React$1.useMemo(function () {
+  var commonProps = React.useMemo(function () {
     var newProps = {};
 
     if (!noCount) {
@@ -598,7 +598,7 @@ var WrapperButton = styled__default["default"](function (_ref) {
       _ref.schemes;
       var rest = _objectWithoutProperties(_ref, _excluded);
 
-  return /*#__PURE__*/React.createElement("button", rest);
+  return /*#__PURE__*/React__default["default"].createElement("button", rest);
 })(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  ", ";\n"])), commonStyle);
 var WrapperLink = styled__default["default"](function (_ref2) {
   _ref2.size;
@@ -612,7 +612,7 @@ var WrapperLink = styled__default["default"](function (_ref2) {
       _ref2.schemes;
       var rest = _objectWithoutProperties(_ref2, _excluded2);
 
-  return /*#__PURE__*/React.createElement(reactRouterDom.Link, rest);
+  return /*#__PURE__*/React__default["default"].createElement(reactRouterDom.Link, rest);
 })(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  ", ";\n  text-decoration: none;\n"])), commonStyle);
 var WrapperOutsideLink = styled__default["default"](function (_ref3) {
   _ref3.size;
@@ -626,7 +626,7 @@ var WrapperOutsideLink = styled__default["default"](function (_ref3) {
       _ref3.schemes;
       var rest = _objectWithoutProperties(_ref3, _excluded3);
 
-  return /*#__PURE__*/React.createElement("a", rest);
+  return /*#__PURE__*/React__default["default"].createElement("a", rest);
 })(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  ", ";\n  text-decoration: none;\n"])), commonStyle);
 
 var ALLOWED_TYPES = [null, 'button', 'submit'];
@@ -676,7 +676,7 @@ var ButtonIcon = function ButtonIcon(_ref) {
       size = _ref.size,
       scheme = _ref.scheme;
   var theme = styled.useTheme();
-  return /*#__PURE__*/React$1.cloneElement(icon, {
+  return /*#__PURE__*/React.cloneElement(icon, {
     color: bordered ? theme.colors.primary400 : theme.colors[SCHEMES[scheme].color],
     height: size === 'medium' ? 12 : 16
   });
