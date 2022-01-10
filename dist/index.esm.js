@@ -1,4 +1,4 @@
-import React$1, { useMemo, cloneElement } from 'react';
+import React, { useMemo, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import { UserIcon, ErrorIcon } from '@flatchr/icons';
 import { typography as typography$1 } from '@flatchr/helper';
@@ -292,16 +292,16 @@ var UserAvatar = function UserAvatar(props) {
 
     return null;
   }, [withInitials]);
-  return /*#__PURE__*/React$1.createElement(Wrapper$1, {
+  return /*#__PURE__*/React.createElement(Wrapper$1, {
     className: "user-avatar",
     picture: initials ? null : picture,
     height: size,
     width: size,
     withInitials: !!(initials !== null && initials !== void 0 && initials.length)
-  }, !initials && !picture && /*#__PURE__*/React$1.createElement(UserIcon, {
+  }, !initials && !picture && /*#__PURE__*/React.createElement(UserIcon, {
     height: Math.floor(size * .35),
     width: Math.floor(size * .35)
-  }), initials && /*#__PURE__*/React$1.createElement(InitialsWrapper, null, initials));
+  }), initials && /*#__PURE__*/React.createElement(InitialsWrapper, null, initials));
 };
 
 UserAvatar.propTypes = {
@@ -377,7 +377,7 @@ var FormLabel = function FormLabel(props) {
 
     return newProps;
   }, [labelFor, labelId, labelTitle, onClick]);
-  return /*#__PURE__*/React$1.createElement(LabelWrapper, _extends({
+  return /*#__PURE__*/React.createElement(LabelWrapper, _extends({
     noMargin: noMargin,
     required: required,
     className: classNames('sd-formLabel', _defineProperty({}, additionalClassNames, additionalClassNames !== null))
@@ -479,11 +479,11 @@ var Textarea = function Textarea(props) {
 
     return newProps;
   }, [noCount, maxLength]);
-  return /*#__PURE__*/React$1.createElement(Wrapper, {
+  return /*#__PURE__*/React.createElement(Wrapper, {
     isOnError: error || false,
     isFullWidth: fullWidth,
     className: classNames('sd-textarea', _defineProperty({}, additionalClassNames, additionalClassNames !== null))
-  }, /*#__PURE__*/React$1.createElement("textarea", _extends({
+  }, /*#__PURE__*/React.createElement("textarea", _extends({
     "aria-labelledby": "".concat(name, "-label"),
     id: name,
     value: value,
@@ -492,9 +492,9 @@ var Textarea = function Textarea(props) {
     placeholder: placeholder,
     disabled: disabled ? 'disabled' : null,
     required: required
-  }, commonProps)), !noCount && /*#__PURE__*/React$1.createElement(CountWrapper, null, error && /*#__PURE__*/React$1.createElement(ErrorMessage, null, /*#__PURE__*/React$1.createElement(ErrorIcon, {
+  }, commonProps)), !noCount && /*#__PURE__*/React.createElement(CountWrapper, null, error && /*#__PURE__*/React.createElement(ErrorMessage, null, /*#__PURE__*/React.createElement(ErrorIcon, {
     height: 16
-  }), " ", error), /*#__PURE__*/React$1.createElement(Count, null, value.length || 0, "/", maxLength)), error && noCount && /*#__PURE__*/React$1.createElement(ErrorMessage, null, /*#__PURE__*/React$1.createElement(ErrorIcon, {
+  }), " ", error), /*#__PURE__*/React.createElement(Count, null, value.length || 0, "/", maxLength)), error && noCount && /*#__PURE__*/React.createElement(ErrorMessage, null, /*#__PURE__*/React.createElement(ErrorIcon, {
     height: 16
   }), " ", error));
 };
@@ -712,7 +712,7 @@ var Button = function Button(props) {
 
   if (!!(to !== null && to !== void 0 && to.length)) {
     if (!hasExternalLink) {
-      return /*#__PURE__*/React$1.createElement(WrapperLink, _extends({
+      return /*#__PURE__*/React.createElement(WrapperLink, _extends({
         className: classNames('sd-button', _defineProperty({}, additionalClassNames, additionalClassNames !== null)),
         disabled: disabled,
         fullWidth: fullWidth,
@@ -721,7 +721,7 @@ var Button = function Button(props) {
         sizes: SIZES,
         schemes: SCHEMES,
         to: to
-      }, commonProps), icon && /*#__PURE__*/React$1.createElement(ButtonIcon, {
+      }, commonProps), icon && /*#__PURE__*/React.createElement(ButtonIcon, {
         icon: icon,
         bordered: bordered,
         size: size,
@@ -729,7 +729,7 @@ var Button = function Button(props) {
       }), label);
     }
 
-    return /*#__PURE__*/React$1.createElement(WrapperOutsideLink, _extends({
+    return /*#__PURE__*/React.createElement(WrapperOutsideLink, _extends({
       className: classNames('sd-button', _defineProperty({}, additionalClassNames, additionalClassNames !== null)),
       disabled: disabled,
       fullWidth: fullWidth,
@@ -738,7 +738,7 @@ var Button = function Button(props) {
       sizes: SIZES,
       schemes: SCHEMES,
       href: to
-    }, commonProps), icon && /*#__PURE__*/React$1.createElement(ButtonIcon, {
+    }, commonProps), icon && /*#__PURE__*/React.createElement(ButtonIcon, {
       icon: icon,
       bordered: bordered,
       size: size,
@@ -746,7 +746,7 @@ var Button = function Button(props) {
     }), label);
   }
 
-  return /*#__PURE__*/React$1.createElement(WrapperButton, _extends({
+  return /*#__PURE__*/React.createElement(WrapperButton, _extends({
     className: classNames('sd-button', _defineProperty({}, additionalClassNames, additionalClassNames !== null)),
     type: hasExternalLink ? 'button' : type,
     disabled: hasExternalLink ? false : disabled,
@@ -755,7 +755,7 @@ var Button = function Button(props) {
     bordered: bordered,
     sizes: SIZES,
     schemes: SCHEMES
-  }, commonProps, conditionalProps), icon && /*#__PURE__*/React$1.createElement(ButtonIcon, {
+  }, commonProps, conditionalProps), icon && /*#__PURE__*/React.createElement(ButtonIcon, {
     icon: icon,
     bordered: bordered,
     size: size,
