@@ -35,6 +35,19 @@ const UserAvatarStories = {
         type: { summary: "number" },
       },
     },
+    withInitials: {
+      defaultValue: null,
+      description: "Render initials of the user instead of icon or image",
+      control: {
+        type: 'object',
+      },
+      table: {
+        defaultValue: {
+          summary: "null",
+        },
+        type: { summary: "object" },
+      },
+    }
   },
 };
 
@@ -53,4 +66,14 @@ export const WithPicture = Template.bind({});
 WithPicture.args = {
   size: 35,
   picture: 'https://www.madmoizelle.com/wp-content/uploads/2014/03/pourquoi-pingouins-etres-fascinants.jpg',
+};
+
+// With Initials
+export const WithInitials = Template.bind({});
+WithInitials.args = {
+  size: 35,
+  withInitials: {
+    firstname: 'Luke',
+    lastname: 'Skywalker'
+  },
 };

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { UserIcon } from '@flatchr/icons';
+import { typography as typography$1 } from '@flatchr/helper';
 import styled, { css } from 'styled-components';
 
 function ownKeys(object, enumerableOnly) {
@@ -151,12 +152,19 @@ var theme = {
   typography: typography
 };
 
-var _templateObject, _templateObject2;
-var Wrapper = styled.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  align-items: center;\n  background-color: ", ";\n  ", ";\n  border-radius: 50%;\n  color: $color-grey-light;\n  display: flex;\n  flex: 0 0 auto;\n  height: ", "px;\n  justify-content: center;\n  margin: 0 auto;\n  width: ", "px;\n  svg {\n    transform: translateY(-1px);\n    path {\n      fill: ", " !important;\n    }\n  }\n"])), function (p) {
-  return p.theme.colors.background200;
+var _templateObject, _templateObject2, _templateObject3;
+var InitialsWrapper = styled.span(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  color: ", ";\n  font-family: ", ";\n  font-weight: ", ";\n  letter-spacing: 1.25px;\n  transform: translateX(1px);\n"])), function (p) {
+  return p.theme.colors.neutral0;
+}, function (p) {
+  return p.theme.fonts.lato.name;
+}, function (p) {
+  return p.theme.fonts.lato.variants.regular;
+});
+var Wrapper = styled.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  align-items: center;\n  background-color: ", ";\n  ", ";\n  border-radius: 50%;\n  color: $color-grey-light;\n  display: flex;\n  flex: 0 0 auto;\n  height: ", "px;\n  justify-content: center;\n  margin: 0 auto;\n  width: ", "px;\n  svg {\n    transform: translateY(-1px);\n    path {\n      fill: ", " !important;\n    }\n  }\n  ", " {\n    font-size: ", "px;\n  }\n"])), function (p) {
+  return p.withInitials ? p.theme.colors.primary400 : p.theme.colors.background200;
 }, function (p) {
   if (p.picture) {
-    return css(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n        background-image: url(", ");\n        background-position: 50%;\n        background-repeat: no-repeat;\n        background-size: cover;\n      "])), p.picture);
+    return css(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n        background-image: url(", ");\n        background-position: 50%;\n        background-repeat: no-repeat;\n        background-size: cover;\n      "])), p.picture);
   }
 }, function (p) {
   return p.height;
@@ -164,27 +172,46 @@ var Wrapper = styled.div(_templateObject || (_templateObject = _taggedTemplateLi
   return p.width;
 }, function (p) {
   return p.theme.colors.textPrimary;
+}, InitialsWrapper, function (p) {
+  return Math.floor(p.height * .4);
 });
 
 var UserAvatar = function UserAvatar(props) {
   var _props$picture = props.picture,
       picture = _props$picture === void 0 ? null : _props$picture,
       _props$size = props.size,
-      size = _props$size === void 0 ? 35 : _props$size;
+      size = _props$size === void 0 ? 35 : _props$size,
+      _props$withInitials = props.withInitials,
+      withInitials = _props$withInitials === void 0 ? null : _props$withInitials;
+  var initials = useMemo(function () {
+    var _withInitials$firstna;
+
+    if (!!(withInitials !== null && withInitials !== void 0 && (_withInitials$firstna = withInitials.firstname) !== null && _withInitials$firstna !== void 0 && _withInitials$firstna.length)) {
+      return typography$1.getNameInitials(withInitials.firstname, withInitials === null || withInitials === void 0 ? void 0 : withInitials.lastname);
+    }
+
+    return null;
+  }, [withInitials]);
   return /*#__PURE__*/React.createElement(Wrapper, {
     className: "user-avatar",
-    picture: picture,
+    picture: initials ? null : picture,
     height: size,
-    width: size
-  }, !picture && /*#__PURE__*/React.createElement(UserIcon, {
+    width: size,
+    withInitials: !!(initials !== null && initials !== void 0 && initials.length)
+  }, !initials && !picture && /*#__PURE__*/React.createElement(UserIcon, {
     height: Math.floor(size * .35),
     width: Math.floor(size * .35)
-  }));
+  }), initials && /*#__PURE__*/React.createElement(InitialsWrapper, null, initials));
 };
 
 UserAvatar.propTypes = {
   size: PropTypes.number,
-  picture: PropTypes.string
+  picture: PropTypes.string,
+  withInitials: PropTypes.oneOfType([PropTypes.shape({
+    firstname: PropTypes.string.isRequired,
+    lastname: PropTypes.string
+  }), PropTypes.number // used for null
+  ])
 };
 
 export { UserAvatar, theme };
