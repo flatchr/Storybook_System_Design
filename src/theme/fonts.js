@@ -1,7 +1,7 @@
 const fonts = {
   lato: {
     import: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap",
-    value: `"Lato", Arial, Helvetica, sans-serif`,
+    name: `"Lato", Arial, Helvetica, sans-serif`,
     labelName: 'Lato',
     variants: {
       regular: '400',

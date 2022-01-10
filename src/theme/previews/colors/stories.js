@@ -6,17 +6,24 @@ const ColorStory = {
   title: 'Design system/Colors',
   component: ColorsComponent,
   parameters: {
-    options: { showPanel: false },
-    controls: { disabled: true },
-    actions: { disabled: true },
-    docs: {
-      page: null,
+    toolbar: {
+      zoom: { hidden: true },
+      eject: { hidden: true },
+      copy: { hidden: true },
+      fullscreen: { hidden: true },
+      'storybook/viewport': { hidden: true },
+      'storybook/outline': { hidden: true },
     },
-    previewTabs: {
-      'storybook/docs/panel': {
-        hidden: true
-      }
-    }
+    outline: {
+      disable: true,
+    },
+    backgrounds: {
+      disable: true,
+      grid: { disable: true, },
+    },
+    options: {
+      showPanel: false,
+    },
   }
 };
 

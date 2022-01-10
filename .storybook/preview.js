@@ -1,36 +1,41 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { DocsPage, DocsContainer } from '@storybook/addon-docs';
-// import { addParameters } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
-import { Helmet } from "react-helmet";
+import { MemoryRouter } from 'react-router-dom';
 import mainTheme from '../src/theme';
 
 export const decorators = [
   Story => (
-    <ThemeProvider theme={mainTheme}>
-      <Helmet>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        {Object.values(mainTheme.fonts).map(font => {
-          return (
-            <link
-              href={font.import}
-              rel="stylesheet"
-            />
-          );
-        })}
-      </Helmet>
-      <Story />
-    </ThemeProvider>
+    <MemoryRouter>
+      <ThemeProvider theme={mainTheme}>
+        <Story />
+      </ThemeProvider>
+    </MemoryRouter>
   ),
 ];
 
 export const parameters = {
+  backgrounds: {
+    default: 'light',
+    values: [
+      {
+        name: 'light',
+        value: '#FFFFFF',
+      },
+      {
+        name: 'dark',
+        value: '#373737',
+      },
+      {
+        name: 'Flatchr',
+        value: mainTheme.colors.primary400,
+      },
+    ],
+  },
   options: {
     storySort: {
       order: [
-        'Design system', ['Colors', 'Fonts']
+        'Design system', ['Colors', 'Fonts'], 'Atoms', '*'
       ],
     },
   },

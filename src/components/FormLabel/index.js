@@ -45,7 +45,7 @@ const FormLabel = props => {
     <LabelWrapper
       noMargin={noMargin}
       required={required}
-      className={classNames('formLabel', {
+      className={classNames('sd-formLabel', {
         [additionalClassNames]: additionalClassNames !== null,
       })}
       {...addProps}

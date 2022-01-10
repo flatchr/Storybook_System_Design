@@ -8,7 +8,9 @@ export const InitialsWrapper = styled.span`
   transform: translateX(1px);
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(({
+  picture, height, width, withInitials, ...rest
+}) => <div {...rest} />)`
   align-items: center;
   background-color: ${p => p.withInitials ? p.theme.colors.primary400 : p.theme.colors.background200};
   ${p => {

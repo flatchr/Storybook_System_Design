@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(({
+  isOnError, isFullWidth,
+  ...rest
+}) => <div {...rest} />)`
   display: flex;
   font-family: ${p => p.theme.fonts.lato.name};
   flex-direction: column;

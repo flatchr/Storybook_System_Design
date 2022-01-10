@@ -6,14 +6,24 @@ const FontsStory = {
   title: 'Design system/Fonts',
   component: FontsComponent,
   parameters: {
-    options: { showPanel: false },
-    controls: { disabled: true },
-    actions: { disabled: true },
-    previewTabs: {
-      'storybook/docs/panel': {
-        hidden: true
-      }
-    }
+    toolbar: {
+      zoom: { hidden: true },
+      eject: { hidden: true },
+      copy: { hidden: true },
+      fullscreen: { hidden: true },
+      'storybook/viewport': { hidden: true },
+      'storybook/outline': { hidden: true },
+    },
+    outline: {
+      disable: true,
+    },
+    backgrounds: {
+      disable: true,
+      grid: { disable: true, },
+    },
+    options: {
+      showPanel: false,
+    },
   }
 };
 
