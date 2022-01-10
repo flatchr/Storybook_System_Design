@@ -50,7 +50,18 @@ When your new icons has been published, you will need to create a new branch `up
 All the published versions are here : https://gitlab.com/flatchr/shared/system-design/-/packages
 ## How add a new component?
 
-TO FILL
+Create a new directory in `/src/components`, add `index.js` (__required__ - your component), `style.js` (if necessary) and a `stories.js` (__required__)
+
+Write your code, ⚠️ don't forget to fill the PropTypes (__required__), write your stories and explain each prop in the story.
+
+If you want to add a dependency to get more efficient, it's possible!
+```
+yarn add DEPENDENCY_NAME
+```
+
+In package.json, copy the line from peer and paste it into __peerDependencies__
+
+You will need to reference your new component for the export, to do that, be sure of the presence of your component in the main [index.js](/src/index.js).
 ## How to use the published package?
 
 Before install, you will need to register gitlab repository as available for your device:
@@ -73,5 +84,6 @@ yarn add @flatchr/system-design
 
 🎉 __Enjoy your new components!__ 🎉
 
-## TODO README
-- explain `yarn link` usage for testing
+## LINK
+
+- use [`yarn link`](https://classic.yarnpkg.com/en/docs/cli/link/) to test your new icons in an another webapp

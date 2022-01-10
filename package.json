@@ -53,7 +53,8 @@
   },
   "dependencies": {
     "@ctrl/tinycolor": "^3.4.0",
-    "@flatchr/icons": "^1.0.9",
+    "@flatchr/helper": "^1.0.0",
+    "@flatchr/icons": "^1.1.2",
     "classnames": "^2.3.1",
     "prop-types": "^15.8.0",
     "react": "^17.0.2",
@@ -89,7 +90,8 @@
   },
   "peerDependencies": {
     "@ctrl/tinycolor": "^3.4.0",
-    "@flatchr/icons": "^1.0.9",
+    "@flatchr/helper": "^1.0.0",
+    "@flatchr/icons": "^1.1.2",
     "classnames": "^2.3.1",
     "prop-types": "^15.8.0",
     "react": "^17.0.2",

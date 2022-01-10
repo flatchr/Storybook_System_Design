@@ -1,8 +1,16 @@
 import styled, { css } from 'styled-components';
 
+export const InitialsWrapper = styled.span`
+  color: ${p => p.theme.colors.neutral0};
+  font-family: ${p => p.theme.fonts.lato.name};
+  font-weight: ${p => p.theme.fonts.lato.variants.regular};
+  letter-spacing: 1.25px;
+  transform: translateX(1px);
+`;
+
 export const Wrapper = styled.div`
   align-items: center;
-  background-color: ${p => p.theme.colors.background200};
+  background-color: ${p => p.withInitials ? p.theme.colors.primary400 : p.theme.colors.background200};
   ${p => {
     if (p.picture) {
       return css`
@@ -26,6 +34,9 @@ export const Wrapper = styled.div`
     path {
       fill: ${p => p.theme.colors.textPrimary} !important;
     }
+  }
+  ${InitialsWrapper} {
+    font-size: ${p => Math.floor(p.height * .4)}px;
   }
 `;
 
