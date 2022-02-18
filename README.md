@@ -87,3 +87,5 @@ yarn add @flatchr/system-design
 ## LINK
 
 - use [`yarn link`](https://classic.yarnpkg.com/en/docs/cli/link/) to test your new icons in an another webapp
+
+🌮
